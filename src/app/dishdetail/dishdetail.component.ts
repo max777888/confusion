@@ -46,6 +46,7 @@ const DISH = {
 })
 export class DishdetailComponent implements OnInit {
   dish = DISH;
+  selectedDish = DISH[0];
   constructor() { }
 
   ngOnInit() {

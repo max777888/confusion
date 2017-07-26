@@ -6,12 +6,40 @@
     fxLayoutGap="10px" 
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40">
+<div fxFlex="40" >
     <p>Display the details of the Dish here</p>
+</div>
+
+  <div fxFlex="40" *ngIf="selectedDish">
+    <p>Display the details of the Dish here</p>
+     <md-card>
+      <md-card-header>
+        <md-card-title>
+          <h3>{{selectedDish.name | uppercase}}</h3>
+        </md-card-title>
+      </md-card-header>
+      <img md-card-image src={{selectedDish.image}} alt={{selectedDish.name}}>
+      <md-card-content>
+        <p>{{selectedDish.description}}
+        </p>
+      </md-card-content>
+      <md-card-actions>
+        <button md-button>LIKE</button>
+        <button md-button>SHARE</button>
+      </md-card-actions>
+    </md-card>
   </div>
 
-  <div fxFlex="40">
+  <div fxFlex="40" *ngIf="selectedDish">
     <p>Display the list of comments here</p>
+    <md-list>
+      <md-list-item ng-repeat="comment in selectedDish.comments">
+      <h3 md-line> {{comment.rating}} </h3>
+      <h3 md-line> {{comment.comment}} </h3>
+      <h3 md-line> {{comment.author}} </h3>
+      <h3 md-line> {{comment.date | date}} </h3>
+      </md-list-item>
+   </md-list>
   </div>
-
+ 
 </div>
