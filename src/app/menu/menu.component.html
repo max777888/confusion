@@ -9,8 +9,15 @@
     </div>
   </div>
 
- <div >
-  <app-dishdetail></app-dishdetail>
-  </div>
-
+ <md-list fxFlex>
+  <md-list-item *ngFor="let dish of dishes" (click)="onSelected(dish)">
+    <img md-list-avatar src={{dish.image}} alt={{dish.name}}>
+    <h1 md-line> {{dish.name}} </h1>
+    <p md-line>
+      <span> {{dish.description}} </span>
+    </p>
+  </md-list-item>
+</md-list>
+<app-dishdetail [dish]="selectedDish"></app-dishdetail>
+ 
 </div>
