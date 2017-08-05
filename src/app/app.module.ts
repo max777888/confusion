@@ -15,6 +15,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 @NgModule({
   declarations: [
     AppComponent,
