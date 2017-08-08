@@ -10,7 +10,7 @@
   </div>
 
  <md-list fxFlex>
-  <md-list-item *ngFor="let dish of dishes" (click)="onSelected(dish)">
+  <md-list-item *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
     <img md-list-avatar src={{dish.image}} alt={{dish.name}}>
     <h1 md-line> {{dish.name}} </h1>
     <p md-line>
@@ -18,6 +18,5 @@
     </p>
   </md-list-item>
 </md-list>
-<app-dishdetail [dish]="selectedDish"></app-dishdetail>
  
 </div>
