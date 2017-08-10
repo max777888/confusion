@@ -18,6 +18,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { HttpModule } from '@angular/http';
     FooterComponent,
     AboutComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,9 @@ import { HttpModule } from '@angular/http';
     MaterialModule,
     FlexLayoutModule,
     AppRoutingModule
+  ],
+  entryComponents: [
+        LoginComponent
   ],
   providers: [DishService,PromotionService,LeaderService],
   bootstrap: [AppComponent]
