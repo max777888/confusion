@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
   constructor(public dialogRef: MdDialogRef<LoginComponent>) { }
 
   ngOnInit() {
-  }
+   console.log("log in component.ts");  
+}
 
   onSubmit() {
     console.log("User: ", this.user);
