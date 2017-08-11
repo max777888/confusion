@@ -19,6 +19,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import { LoginComponent } from './login/login.component';
     MaterialModule,
     FlexLayoutModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
         LoginComponent
