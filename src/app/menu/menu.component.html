@@ -2,13 +2,11 @@
      fxLayout="column"
      fxLayoutGap="10px">
 
-  <div fxFlex>
+  <div fxFlex *ngIf="dishes">
     <div>
       <h3>Menu</h3>
       <hr>
     </div>
-  </div>
-
  <md-list fxFlex>
   <md-list-item *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
     <img md-list-avatar src={{dish.image}} alt={{dish.name}}>
@@ -18,5 +16,8 @@
     </p>
   </md-list-item>
 </md-list>
- 
+  </div> 
+ <div [hidden]="dishes">
+   <md-spinner></md-spinner><h4>Loading . . . Please Wait</h4>
+   </div> 
 </div>
