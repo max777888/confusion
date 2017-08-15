@@ -10,6 +10,7 @@
  <md-list fxFlex>
   <md-list-item *ngFor="let dish of dishes" [routerLink]="['/dishdetail', dish.id]">
     <img md-list-avatar src={{dish.image}} alt={{dish.name}}>
+     <img height="200px" src="{{BaseURL + dish.image}}" alt={{dish.name}}>
     <h1 md-line> {{dish.name}} </h1>
     <p md-line>
       <span> {{dish.description}} </span>
