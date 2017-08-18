@@ -12,12 +12,12 @@ import { Comment } from '../shared/comment';
   styleUrls: ['./dishdetail.component.scss']
 })
 export class DishdetailComponent implements OnInit {
-
+dishcopy = null;
   dish: Dish;
  dishIds: number[];
   prev: number;
   next: number;
-
+  errmsg:string;
   commentForm: FormGroup;
   comment: Comment;
   
@@ -85,6 +85,10 @@ export class DishdetailComponent implements OnInit {
       rating: 5,
       comment: ''
     });
+
+     this.dishcopy.comments.push(this.comment);
+    this.dishcopy.save()
+      .subscribe(dish => { this.dish = dish; console.log(this.dish); });
   }
  /* ngOnInit() {
     let id = +this.route.snapshot.params['id'];
@@ -95,9 +99,13 @@ export class DishdetailComponent implements OnInit {
 
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
     this.route.params
+      .switchMap((params: Params) => { return this.dishservice.getDish(+params['id']); })
+      .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },
+          errmess => { this.dish = null; this.errMess = <any>errmess; });
+    /*this.route.params
       .switchMap((params: Params) => this.dishservice.getDish(+params['id']))
       .subscribe(dish => { this.dish = dish; this.setPrevNext(dish.id); });
-  }
+ */ }
 
   setPrevNext(dishId: number) {
     let index = this.dishIds.indexOf(dishId);
