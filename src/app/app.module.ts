@@ -22,6 +22,8 @@ import { HttpModule } from '@angular/http';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { baseURL } from './shared/baseurl';
+import { RestangularModule, Restangular } from 'ngx-restangular';
+import { RestangularConfigFactory } from './shared/restConfig';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,8 @@ import { baseURL } from './shared/baseurl';
     FlexLayoutModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RestangularModule.forRoot(RestangularConfigFactory)
   ],
   entryComponents: [
         LoginComponent
