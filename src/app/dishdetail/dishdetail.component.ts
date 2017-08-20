@@ -6,12 +6,13 @@ import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 import { Comment } from '../shared/comment';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+//import { trigger, state, style, animate, transition } from '@angular/animations';
+import { visibility } from '../animations/app.animation';
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
   styleUrls: ['./dishdetail.component.scss'],
-  animations: [
+  /*animations: [
     trigger('visibility', [
         state('shown', style({
             transform: 'scale(1.0)',
@@ -23,7 +24,11 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
         })),
         transition('* => *', animate('0.5s ease-in-out'))
     ])
+  ]*/
+   animations: [
+    visibility()
   ]
+ 
 })
 export class DishdetailComponent implements OnInit {
 dishcopy = null;

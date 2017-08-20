@@ -96,5 +96,25 @@
             </md-input-container>
           </p>
           <button type="submit" md-button class="background-primary text-floral-white" [disabled]="feedbackForm.invalid">Submit</button>
+    
+     
+    
         </form>
       </div>
+       
+    <div *ngIf="feedbackSubmissionInProgress" [@expand]>
+      <md-spinner></md-spinner>
+      <h4>Submitting Form... Please wait</h4>
+    </div>
+    <div *ngIf="displayFeedbackAfterPost" [@expand]>
+      <h4>Your Submission</h4>
+      <md-list *ngIf="feedback">
+      <p md-line>First Name: {{ feedback.firstname }}</p>
+      <p md-line>Last Name: {{ feedback.lastname }}</p>
+      <p md-line>Tel. Num: {{ feedback.telnum }}</p>
+      <p md-line>Email: {{ feedback.email }}</p>
+      <p md-line>Contact You?: {{ feedback.agree }}</p>
+      <p md-line>How?: {{ feedback.contacttype }}</p>
+      <p md-line>Feedback?: {{ feedback.message }}</p>
+      </md-list>
+    </div>
