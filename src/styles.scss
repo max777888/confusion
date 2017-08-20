@@ -11,12 +11,6 @@ body {
     display:flex;
 }
 
-.highlight {
-    background-color: $background-pale;
-    border: 1px solid $primary-color-dark;
-    z-index: 1;
-    transform: scale(1.01);
-}
 
 $lt-gray: #ddd;
 $background-dark: #512DA8;
@@ -60,4 +54,12 @@ $divider-color:        #BDBDBD;
 
 .form-size {
     width: 75%
+}
+
+
+.highlight {
+    background-color: $background-pale;
+    border: 1px solid $primary-color-dark;
+    z-index: 1;
+    transform: scale(1.01);
 }
